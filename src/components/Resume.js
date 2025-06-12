@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Resume.css';
 import resumePDF from '../assets/Resume.pdf';
-import resumePreview from '../assets/resume-preview.png'; // Export your resume as PNG or JPG
+import resumePreview from '../assets/resume-preview.png'; 
 
 function Resume() {
   return (
