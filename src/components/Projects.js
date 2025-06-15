@@ -20,7 +20,7 @@ function Projects() {
       description: 'Website for a makeup artist to showcase services, bookings, and testimonials.',
       tech: 'React, Node.js, Express, MongoDB',
       image: MakeupImg,
-      live: 'https://your-live-link.com',
+      live: 'https://684bc55253d926818c4c9c14--glitz-and-glam.netlify.app/',
       github: 'https://github.com/Vanshika438/glitz-and-glam'
     },
     {
@@ -28,7 +28,7 @@ function Projects() {
       description: 'An e-learning platform with video lessons, quizzes, student playlists, and teacher uploads.',
       tech: 'MERN Stack, Google Auth, Chatbot Integration',
       image: EduImg,
-      live: 'https://your-live-link.com',
+      live: '', // Leave blank to disable
       github: 'https://github.com/Vanshika438/Digital-Edu-Platform'
     }
   ];
@@ -45,7 +45,11 @@ function Projects() {
               <p>{project.description}</p>
               <span><strong>Tech:</strong> {project.tech}</span>
               <div className="project-links">
-                <a href={project.live} target="_blank" rel="noopener noreferrer">Live</a>
+                {project.live ? (
+                  <a href={project.live} target="_blank" rel="noopener noreferrer">Live</a>
+                ) : (
+                  <span className="disabled-link">Live (Coming Soon)</span>
+                )}
                 <a href={project.github} target="_blank" rel="noopener noreferrer">GitHub</a>
               </div>
             </div>

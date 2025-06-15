@@ -53,14 +53,14 @@
   justify-content: center;
   align-items: center;
   transition: opacity 0.3s ease;
-  backdrop-filter: blur(2px); /* Optional: adds soft glass effect */
+  backdrop-filter: blur(2px);
 }
 
 
 .project-card:hover .project-img {
   transform: scale(1.05);
   transition: transform 0.3s ease;
-  opacity: 1; /* Keep image visible */
+  opacity: 1; 
 }
 
 
@@ -100,6 +100,12 @@
 
 .project-links a:hover {
   background-color: #778DA9;
+}
+.disabled-link {
+  color: grey;
+  text-decoration: none;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* Responsive adjustments */
