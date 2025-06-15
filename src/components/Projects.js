@@ -12,7 +12,7 @@ function Projects() {
       description: 'A web app that lets users generate portfolios from form inputs.',
       tech: 'React, CSS',
       image: PortfolioImg,
-      live: 'https://68452e83650af742efe3c4da--portfolio-generator-portgen.netlify.app/',
+      live: '',
       github: 'https://github.com/Vanshika438/Portfolio-Generator'
     },
     {
