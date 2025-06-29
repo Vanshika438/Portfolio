@@ -20,7 +20,7 @@ function Projects() {
       description: 'Website for a makeup artist to showcase services, bookings, and testimonials.',
       tech: 'React, Node.js, Express, MongoDB',
       image: MakeupImg,
-      live: 'https://684bc55253d926818c4c9c14--glitz-and-glam.netlify.app/',
+      live: 'https://glitz-and-glam.netlify.app/',
       github: 'https://github.com/Vanshika438/glitz-and-glam'
     },
     {
