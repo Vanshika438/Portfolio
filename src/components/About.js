@@ -1,14 +1,10 @@
 import React from 'react';
 import '../styles/About.css';
-import profile from '../assets/profile.jpg';
 
 function About() {
   return (
     <section id="About" className="about">
       <div className="about-container">
-        <div className="about-image">
-          <img src={profile} alt="Profile" />
-        </div>
         <div className="about-text">
           <h2>About Me</h2>
           <p>
@@ -29,3 +25,4 @@ function About() {
 }
 
 export default About;
+

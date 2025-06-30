@@ -1,0 +1,44 @@
+/* colors.css - Midnight Teal Professional Palette */
+:root {
+  /* Primary colors - Deep blue/navy theme */
+  --primary: #2D3748;       /* Dark navy */
+  --primary-dark: #1A202C;  /* Almost black */
+  --primary-light: #4A5568; /* Medium slate */
+  
+  /* Accent colors - Teal for highlights */
+  --accent: #38B2AC;        /* Vibrant teal */
+  --accent-dark: #2C7A7B;   /* Deep teal */
+  --accent-light: #81E6D9;  /* Light teal */
+  
+  /* Neutral colors */
+  --white: #FFFFFF;
+  --light-gray: #EDF2F7;
+  --medium-gray: #E2E8F0;
+  --dark-gray: #718096;
+  --black: #1A202C;
+  
+  /* Backgrounds */
+  --bg-dark: var(--primary-dark);
+  --bg-light: var(--white);
+  --bg-gray: var(--light-gray);
+  
+  /* Text colors */
+  --text-dark: var(--black);
+  --text-light: var(--white);
+  --text-muted: var(--dark-gray);
+  
+  /* UI Elements */
+  --card-bg: var(--white);
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --section-bg: var(--bg-gray);
+  
+  /* Buttons */
+  --btn-primary: var(--accent);
+  --btn-primary-hover: var(--accent-dark);
+  --btn-secondary: var(--primary);
+  --btn-secondary-hover: var(--primary-dark);
+  
+  /* Borders */
+  --border-light: var(--medium-gray);
+  --border-dark: var(--dark-gray);
+}

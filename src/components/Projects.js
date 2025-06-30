@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../styles/Projects.css';
-
 import PortfolioImg from '../assets/Portfolio-Gen.png';
 import MakeupImg from '../assets/Glitz-Glam.png';
 import EduImg from '../assets/Digital-Edu.png';
@@ -28,29 +27,84 @@ function Projects() {
       description: 'An e-learning platform with video lessons, quizzes, student playlists, and teacher uploads.',
       tech: 'MERN Stack, Google Auth, Chatbot Integration',
       image: EduImg,
-      live: '', // Leave blank to disable
+      live: '',
       github: 'https://github.com/Vanshika438/Digital-Edu-Platform'
     }
   ];
 
+  const sectionRef = useRef();
+  const projectCardsRef = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    projectCardsRef.current.forEach((card) => {
+      if (card) observer.observe(card);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="Projects" className="projects">
-      <h2>Projects</h2>
+    <section id="Projects" className="projects" ref={sectionRef}>
+      <h2 className="section-title">Projects</h2>
       <div className="project-grid">
         {projectData.map((project, index) => (
-          <div className="project-card" key={index}>
-            <img src={project.image} alt={project.title} className="project-img" />
+          <div 
+            className="project-card" 
+            key={index}
+            ref={(el) => (projectCardsRef.current[index] = el)}
+            aria-label={`Project: ${project.title}`}
+          >
+            <img 
+              src={project.image} 
+              alt={project.title} 
+              className="project-img" 
+              loading="lazy"
+            />
             <div className="project-overlay">
               <h3>{project.title}</h3>
               <p>{project.description}</p>
-              <span><strong>Tech:</strong> {project.tech}</span>
+              <span className="tech-stack"><strong>Tech:</strong> {project.tech}</span>
               <div className="project-links">
                 {project.live ? (
-                  <a href={project.live} target="_blank" rel="noopener noreferrer">Live</a>
+                  <a 
+                    href={project.live} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    aria-label={`View live demo of ${project.title}`}
+                  >
+                    Live Demo
+                  </a>
                 ) : (
-                  <span className="disabled-link">Live (Coming Soon)</span>
+                  <span className="disabled-link" aria-hidden="true">
+                    Live (Coming Soon)
+                  </span>
                 )}
-                <a href={project.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a 
+                  href={project.github} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label={`View GitHub repository for ${project.title}`}
+                >
+                  GitHub
+                </a>
               </div>
             </div>
           </div>
