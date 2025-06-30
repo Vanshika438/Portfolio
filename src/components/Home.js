@@ -7,7 +7,7 @@ function Home() {
     <section id="Home" className="home">
       <div className="home-container">
         <div className="home-content">
-          <h1>Hi, I'm <span>Sharma</span></h1>
+          <h1>Hi, I'm Vanshika<span>Sharma</span></h1>
           <h2>Frontend Developer</h2>
           <p>
             I'm a passionate frontend developer skilled in React.js, JavaScript, and the MERN stack.

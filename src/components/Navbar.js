@@ -37,11 +37,11 @@ const Navbar = () => {
         ))}
       </div>
       <button
-  className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`}
-  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
->
-  ☰
-</button>
+        className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`}
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+      >
+        ☰
+      </button>
 
     </nav>
   );
